@@ -26,8 +26,15 @@
 
 html {
     font-family: 'Hanken Grotesk', sans-serif;
-    height: 100%;
-    width: 100%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #main-card {
@@ -37,8 +44,6 @@ html {
     display: flex;
     box-shadow: 5px 5px 50px 5px var(--light-lavender);
     border-radius: var(--border-radius);
-    position: relative;
-    top: 150px;
 }
 
 #summary, #your-result {
@@ -137,14 +142,11 @@ html {
 .score {
     color: var(--dark-gray-blue);
     font-weight: bold;
-    position: relative;
-    right: -55px;
 }
 
 .category {
     font-weight: bold;
-    position: relative;
-    left: -45px;
+    width: 65%;
 }
 
 .hundred {
@@ -152,7 +154,7 @@ html {
     opacity: 0.8;
 }
 
-#main-card h3, #main-card h2 {
+#main-card h3, #main-card h1 {
     font-size: 2em;
 }
 
@@ -160,7 +162,7 @@ html {
     position: relative;
 }
 
-#main-card h3 {
+#main-card h1 {
     opacity: 0.6;
 }
 
@@ -177,19 +179,20 @@ svg {
 
 @media only screen and (max-width: 375px) {
     #main-card {
-        box-shadow: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 50vh;
+        box-shadow: none;
         display: flex;
         flex-direction: column;
         margin: 0;
         position: absolute;
         top: 0;
+        left: 0;
     }
 
     #your-result {
-        width: 100%;
-        height: 50%;
+        width: 100vw;
+        height: 50vh;
         border-top-right-radius: 0;
         border-top-left-radius: 0;
     }
@@ -201,7 +204,7 @@ svg {
     }
 
     #score-circle {
-        transform: scale(0.8);
+        transform: scale(0.9);
     }
 
     #your-result p {
@@ -218,11 +221,6 @@ svg {
         left: -5px;
         top: 0px;
         width: 100%;
-    }
-
-    #continue {
-        position: relative;
-        top: -250px;
     }
 
     .score {
